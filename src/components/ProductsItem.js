@@ -43,7 +43,8 @@ const ProductsItem = ({ image, id, title, price, description, category, loading 
             <br />
             {descr}
             <span onClick={onClickReadMore} className="underline cursor-pointer">
-              <br /> {description.length === descr.length ? 'скрыть' : 'читать подробнее'}
+              <br />
+              {description.length === descr.length ? 'скрыть' : 'читать подробнее'}
             </span>
           </p>
           <div className="flex w-full justify-between items-center">
