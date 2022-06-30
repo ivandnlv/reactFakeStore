@@ -9,7 +9,7 @@ const Pagination = () => {
 
   useEffect(() => {
     const getAllProducts = async () => {
-      const response = await axios
+      await axios
         .get('https://fakestoreapi.com/products')
         .then((res) => res.data)
         .then((data) => setAllPages(Math.floor(data.length / productsToShow)));

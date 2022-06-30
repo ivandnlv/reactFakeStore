@@ -1,7 +1,6 @@
-import React from 'react';
 import ContentLoader from 'react-content-loader';
 
-const Skeleton = () => {
+const ProductsSkeleton = () => {
   return (
     <div className="p-8 rounded-lg bg-slate-400 flex flex-col items-center">
       <ContentLoader
@@ -26,4 +25,4 @@ const Skeleton = () => {
   );
 };
 
-export default Skeleton;
+export default ProductsSkeleton;

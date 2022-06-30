@@ -1,9 +1,14 @@
-import React, { useContext } from 'react';
-import { SearchContext } from '../../App';
+import { useDispatch, useSelector } from 'react-redux';
+import { setSearchValue } from '../../features/searchSlice';
 import searchIcon from './search.svg';
 
-const Search = ({ onChange }) => {
-  const { searchValue } = useContext(SearchContext);
+const Search = ({}) => {
+  const dispatch = useDispatch();
+  const searchValue = useSelector((state) => state.search.searchValue);
+
+  const onSearchChange = (value) => {
+    dispatch(setSearchValue(value));
+  };
 
   return (
     <label className="flex bg-white p-2 pl-3 pr-4 rounded-lg w-1/5">
@@ -13,7 +18,7 @@ const Search = ({ onChange }) => {
         type="text"
         placeholder="Поиск..."
         className="pl-2 outline-none border-none text-black w-full block"
-        onChange={(e) => onChange(e)}
+        onChange={(e) => onSearchChange(e.target.value)}
       />
     </label>
   );
