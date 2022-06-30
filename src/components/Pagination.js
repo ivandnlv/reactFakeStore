@@ -4,19 +4,7 @@ import { useEffect } from 'react';
 import { useState } from 'react';
 
 const Pagination = () => {
-  const [allPages, setAllPages] = useState(0);
   const productsToShow = 6;
-
-  useEffect(() => {
-    const getAllProducts = async () => {
-      await axios
-        .get('https://fakestoreapi.com/products')
-        .then((res) => res.data)
-        .then((data) => setAllPages(Math.floor(data.length / productsToShow)));
-    };
-    getAllProducts();
-    console.log(allPages);
-  }, []);
 
   return (
     <div className="flex">

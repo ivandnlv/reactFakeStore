@@ -7,7 +7,7 @@ import ProductsItem from './ProductsItem';
 const ProductsList = () => {
   const dispatch = useDispatch();
   const searchValue = useSelector((state) => state.search.searchValue);
-  const { products, loading, error } = useSelector((state) => state.products);
+  const { products, loading, error, productsFiltred } = useSelector((state) => state.products);
 
   useEffect(() => {
     dispatch(getProducts());
@@ -19,6 +19,10 @@ const ProductsList = () => {
         ? [...Array(6)].map((item, index) => <ProductsSkeleton key={index} />)
         : error
         ? alert('Произошла ошибка')
+        : productsFiltred.length !== 0
+        ? productsFiltred
+            .filter((item) => item.title.toLowerCase().includes(searchValue))
+            .map((item) => <ProductsItem {...item} key={item.id} loading={loading} />)
         : products
             ?.filter((item) => item.title.toLowerCase().includes(searchValue))
             .map((item) => <ProductsItem {...item} key={item.id} loading={loading} />)}

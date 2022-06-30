@@ -4,7 +4,7 @@ import axios from 'axios';
 export const getCategories = createAsyncThunk(
   'categories/getCategories',
   async (_, { rejectWithValue, dispatch }) => {
-    const result = await axios.get('https://fakestoreapi.com/products?limit=8');
+    const result = await axios.get('https://fakestoreapi.com/products');
     dispatch(setCategories(result.data));
   },
 );
