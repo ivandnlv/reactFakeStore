@@ -1,8 +1,10 @@
 import ContentLoader from 'react-content-loader';
 
+import styles from './ProductsSkeleton.module.scss';
+
 const ProductsSkeleton = () => {
   return (
-    <div className="p-8 rounded-lg bg-slate-400 flex flex-col items-center">
+    <div className={styles.skeleton + ' p-8 rounded-lg bg-slate-400 flex flex-col items-center'}>
       <ContentLoader
         speed={1}
         width={350}

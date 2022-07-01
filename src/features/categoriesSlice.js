@@ -4,7 +4,7 @@ import axios from 'axios';
 export const getCategories = createAsyncThunk(
   'categories/getCategories',
   async (_, { rejectWithValue, dispatch }) => {
-    const result = await axios.get('https://fakestoreapi.com/products');
+    const result = await axios.get('https://fakestoreapi.com/products/categories');
     dispatch(setCategories(result.data));
   },
 );
@@ -18,9 +18,7 @@ const categoriesSlice = createSlice({
   },
   reducers: {
     setCategories(state, action) {
-      action.payload.forEach((item) => {
-        !state.categories.includes(item.category) && state.categories.push(item.category);
-      });
+      state.categories = action.payload;
     },
   },
   extraReducers: {

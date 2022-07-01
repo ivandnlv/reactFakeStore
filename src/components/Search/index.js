@@ -11,7 +11,7 @@ const Search = ({}) => {
   };
 
   return (
-    <label className="flex bg-white p-2 pl-3 pr-4 rounded-lg w-1/5">
+    <label className="flex bg-white p-2 pl-3 pr-4 rounded-lg w-full">
       <img src={searchIcon} alt="search-icon" width={28} height={28} />
       <input
         value={searchValue}

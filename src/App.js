@@ -11,18 +11,18 @@ function App() {
     <div className="App dark: bg-slate-800">
       <h1 className="text-4xl font-bold text-center mt-10 text-white">Магазин</h1>
       <div className="container mt-10 m-auto w-auto bg-sky-900 text-white p-10 rounded-xl">
-        <div className="flex w-full justify-between items-center">
+        <Search />
+        <div className="flex w-full justify-between items-center mt-5">
           {searchValue === '' ? (
             <h2 className="text-2xl font-semibold">Каталог товаров нашего магазина</h2>
           ) : (
             <h2 className="text-2xl font-semibold">Поиск по запросу: {searchValue}</h2>
           )}
           <Pagination />
-          <Search />
         </div>
+        <Categories />
         <div className="flex justify-between w-full">
           <ProductsList />
-          <Categories />
         </div>
       </div>
     </div>
