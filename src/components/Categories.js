@@ -3,7 +3,7 @@ import { useEffect } from 'react';
 import { getCategories } from '../features/categoriesSlice';
 import { useDispatch } from 'react-redux';
 import CategoriesSkeleton from '../UI/CategoriesSkeleton';
-import { filterProducts } from '../features/productsSlice';
+import { filterProducts, getProductsByFilter, setCategory } from '../features/productsSlice';
 
 const Categories = () => {
   const dispatch = useDispatch();
@@ -13,7 +13,9 @@ const Categories = () => {
   }, []);
 
   const onCategoryClick = (category) => {
-    dispatch(filterProducts(category));
+    dispatch(setCategory(category));
+    dispatch(getProductsByFilter());
+    dispatch(filterProducts());
   };
 
   const { categories, loading, error } = useSelector((state) => state.categories);

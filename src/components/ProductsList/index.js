@@ -1,8 +1,11 @@
-import ProductsSkeleton from '../UI/ProductsSkeleton';
+import ProductsSkeleton from '../../UI/ProductsSkeleton';
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { getProducts } from '../features/productsSlice';
-import ProductsItem from './ProductsItem';
+import { getProducts } from '../../features/productsSlice';
+import ProductsItem from '../ProductsItem';
+import { productsToShow } from '../Pagination';
+
+import styles from './ProductsList.module.scss';
 
 const ProductsList = () => {
   const dispatch = useDispatch();
@@ -14,9 +17,9 @@ const ProductsList = () => {
   }, []);
 
   return (
-    <div className="grid mt-5 gap-5 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4 w-3/4 flex-auto">
+    <div className={styles.productsList + ' mt-5 lg:gap-8 md:gap-5 sm: w-full flex-auto'}>
       {loading
-        ? [...Array(6)].map((item, index) => <ProductsSkeleton key={index} />)
+        ? [...Array(productsToShow)].map((item, index) => <ProductsSkeleton key={index} />)
         : error
         ? alert('Произошла ошибка')
         : productsFiltred.length !== 0

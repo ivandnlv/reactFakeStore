@@ -9,9 +9,9 @@ import {
   getProducts,
 } from '../features/productsSlice';
 
-const Pagination = () => {
-  const productsToShow = 8;
+export const productsToShow = 8;
 
+const Pagination = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [firstNumberLocal, setFirstNumberLocal] = useState(0);
   const [lastNumberLocal, setLastNumberLocal] = useState(currentPage * productsToShow);
