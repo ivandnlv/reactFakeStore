@@ -1,5 +1,5 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-import { productsToShow } from '../components/Pagination';
+import { productsToShow } from '../../components/Pagination';
 import axios from 'axios';
 axios.defaults.baseURL = 'https://fakestoreapi.com/';
 

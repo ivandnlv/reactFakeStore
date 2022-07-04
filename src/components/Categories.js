@@ -1,16 +1,10 @@
 import { useSelector } from 'react-redux';
-import { useEffect } from 'react';
-import { getCategories } from '../features/categoriesSlice';
 import { useDispatch } from 'react-redux';
 import CategoriesSkeleton from '../UI/CategoriesSkeleton';
-import { filterProducts, getProductsByFilter, setCategory } from '../features/productsSlice';
+import { filterProducts, getProductsByFilter, setCategory } from '../redux/slices/productsSlice';
 
 const Categories = () => {
   const dispatch = useDispatch();
-
-  useEffect(() => {
-    dispatch(getCategories());
-  }, []);
 
   const onCategoryClick = (category) => {
     dispatch(setCategory(category));

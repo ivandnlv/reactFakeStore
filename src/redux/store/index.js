@@ -1,7 +1,7 @@
 import { configureStore } from '@reduxjs/toolkit';
-import categoriesSlice from '../features/categoriesSlice';
-import productsSlice from '../features/productsSlice';
-import searchSlice from '../features/searchSlice';
+import categoriesSlice from '../slices/categoriesSlice';
+import productsSlice from '../slices/productsSlice';
+import searchSlice from '../slices/searchSlice';
 
 export default configureStore({
   reducer: {
