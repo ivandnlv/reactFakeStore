@@ -9,6 +9,9 @@
 
 Стэк: 
 + React;
-+ React Hooks (useState, useEffect, useContext);
++ React Hooks (useState, useEffect);
++ Redux Toolkit;
 + Tailwind;
 + Axios.
+
+![image](https://user-images.githubusercontent.com/91759945/177528006-a4e18ff6-03a3-4199-8018-44137aeae86b.png)
